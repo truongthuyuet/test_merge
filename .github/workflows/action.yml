@@ -16,14 +16,11 @@ jobs:
       - name: install cppunit
         run: sudo apt install -y libcppunit-dev
       - name: configure
-        run: |
-                cd AdvProg_L0-Hello
-                ./configure
+        working-directory: ./AdvProg_L0-Hello
+        run: .configure
       - name: make
-        run: |
-                cd AdvProg_L0-Hello
-                make
+        working-directory: ./AdvProg_L0-Hello
+        run: make
       - name: make test
-        run: |
-                cd AdvProg_L0-Hello
-                make test
+        working-directory: ./AdvProg_L0-Hello
+        run: make test
