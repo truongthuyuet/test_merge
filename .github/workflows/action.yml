@@ -17,7 +17,7 @@ jobs:
         run: sudo apt install -y libcppunit-dev
       - name: configure
         working-directory: ./AdvProg_L0-Hello
-        run: .configure
+        run: ./configure
       - name: make
         working-directory: ./AdvProg_L0-Hello
         run: make
