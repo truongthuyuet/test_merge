@@ -13,7 +13,7 @@ jobs:
     name: test_get_files
     steps:
       - uses: actions/checkout@v2
-      - uses: master/get-changed-files@v1
+      - uses: actions/get-changed-files@v1
         id: abc
         with:
           format: space-delimited
