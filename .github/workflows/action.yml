@@ -27,8 +27,12 @@ jobs:
     runs-on: ubuntu-latest
     name: Check pattern
     steps:
-    - name: Check pattern
+    - name: Check pattern L1
       if: ${{ contains(needs.get_changed_files.outputs.abc, 'AdvProg_L1-GuessIt') }}
+      run: |
+        echo "bingo contain ${{needs.get_changed_files.outputs.abc}}"
+    - name: Check L0
+      if: ${{ contains(needs.get_changed_files.outputs.abc, 'AdvProg_L0-Hello') }}
       run: |
         echo "bingo contain ${{needs.get_changed_files.outputs.abc}}"
 
