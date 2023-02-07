@@ -76,6 +76,10 @@ jobs:
         run: make test
 
       # AdvProg_L6-Painter
+      - name: install sdl2
+        run: sudo apt install libsdl2-dev
+      - name: install sdl2image
+        run: sudo apt install libsdl2-image-dev
       - name: configure
         working-directory: ./AdvProg_L6-Painter
         run: ./configure
