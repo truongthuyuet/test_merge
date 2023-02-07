@@ -1,4 +1,4 @@
-name: L00_Hello CI
+name: Test 7 Repo
 
 on:
   pull_request:
