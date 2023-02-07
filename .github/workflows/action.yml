@@ -168,6 +168,7 @@ jobs:
       - name: make & test
         working-directory: ./AdvProg_L7-Snake
         run: |
+          chmod +x configure
           ./configure
           make
           make test
