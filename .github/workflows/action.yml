@@ -8,9 +8,9 @@ on:
       - '**/mainTest.cpp'
       
 jobs:
-  test_get_files:
+  get_changed_files:
     runs-on: ubuntu-latest
-    name: test_get_files
+    name: get_changed_files
     steps:
     - name: Changed Files
       id: thuytt_files
@@ -19,8 +19,13 @@ jobs:
       run: |
         echo "Modified:"
         echo "${{ steps.thuytt_files.outputs.modified }}"
+  
+  check_in_folder:
+    runs-on: ubuntu-latest
+    name: Check pattern
+    steps:
     - name: Check pattern
-      if: contains(steps.thuytt_files.outputs.modified, 'AdvProg_L0-Hello')
+      if: contains(get_changed_files.steps.thuytt_files.outputs.modified, 'AdvProg_L0-Hello')
       run: |
         echo "bingo contain"
 
