@@ -13,14 +13,15 @@ jobs:
     name: test_get_files
     steps:
     - uses: actions/checkout@v2
-    - id: files
-      continue-on-error: true
-      uses: jitterbit/get-changed-files@v1
-    - run: |
-        for changed_file in ${{ steps.files.outputs.all }}; do
-          echo "Do something with this ${changed_file}."
+    - name: Get changed files
+      id: changed-files
+      uses: tj-actions/changed-files@v35
+
+    - name: List all changed files
+      run: |
+        for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+          echo "$file was changed"
         done
-      
 
 
   run_7_jobs:
