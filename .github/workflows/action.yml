@@ -94,6 +94,9 @@ jobs:
         run: make test
 
       # AdvProg_L7-Snake
+      - name: configure privelige
+        working-directory: ./AdvProg_L7-Snake
+        run: chmod +x configure
       - name: configure
         working-directory: ./AdvProg_L7-Snake
         run: ./configure
