@@ -13,7 +13,7 @@ jobs:
     name: test_get_files
     steps:
     - name: Changed Files
-      uses: tj-actions/changed-files@v35.5.1
+      uses: Ana06/get-changed-files@v2.2.0
 
 
 
