@@ -12,23 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     name: test_get_files
     steps:
-    - uses: actions/checkout@v3
-    - name: Get changed files
-      id: changed-files
-      uses: tj-actions/changed-files@v35
-
-    - name: List all changed files
-      run: |
-        for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-          echo "$file was changed"
-        done
+    - name: Changed Files
+      uses: tj-actions/changed-files@v35.5.1
 
 
-  run_7_jobs:
-    runs-on: ubuntu-latest
-    name: Run 7 jobs
-    steps:
-      - uses: actions/checkout@v2
+
+#   run_7_jobs:
+#     runs-on: ubuntu-latest
+#     name: Run 7 jobs
+#     steps:
+#       - uses: actions/checkout@v2
 
       # - name: update
       #   run: sudo apt-get update
