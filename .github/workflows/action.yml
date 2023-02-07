@@ -13,11 +13,12 @@ jobs:
     name: test_get_files
     steps:
     - name: Changed Files
+      id: thuytt_files
       uses: Ana06/get-changed-files@v2.2.0
     - name: Printing
       run: |
         echo "Modified:"
-        echo "${{ steps.abc.outputs.modified }}"
+        echo "${{ steps.thuytt_files.outputs.modified }}"
 
 
 #   run_7_jobs:
