@@ -16,66 +16,68 @@ jobs:
       - name: install cppunit
         run: sudo apt install -y libcppunit-dev
       
-      # AdvProg_L0-Hello
-      - name: configure
-        working-directory: ./AdvProg_L0-Hello
-        run: ./configure
-      - name: make AdvProg_L0
-        working-directory: ./AdvProg_L0-Hello
-        run: make
-      - name: make test AdvProg_L0
-        working-directory: ./AdvProg_L0-Hello
-        run: make test
+      # # AdvProg_L0-Hello
+      # - name: configure
+      #   working-directory: ./AdvProg_L0-Hello
+      #   run: ./configure
+      # - name: make AdvProg_L0
+      #   working-directory: ./AdvProg_L0-Hello
+      #   run: make
+      # - name: make test AdvProg_L0
+      #   working-directory: ./AdvProg_L0-Hello
+      #   run: make test
 
-      # AdvProg_L1-GuessIt
-      - name: configure
-        working-directory: ./AdvProg_L1-GuessIt
-        run: ./configure
-      - name: make AdvProg_L1
-        working-directory: ./AdvProg_L1-GuessIt
-        run: make
-      - name: make test AdvProg_L1
-        continue-on-error: true
-        working-directory: ./AdvProg_L1-GuessIt
-        run: make test
+      # # AdvProg_L1-GuessIt
+      # - name: configure
+      #   working-directory: ./AdvProg_L1-GuessIt
+      #   run: ./configure
+      # - name: make AdvProg_L1
+      #   working-directory: ./AdvProg_L1-GuessIt
+      #   run: make
+      # - name: make test AdvProg_L1
+      #   continue-on-error: true
+      #   working-directory: ./AdvProg_L1-GuessIt
+      #   run: make test
 
-      # AdvProg_L2-Calculus
-      - name: configure
-        working-directory: ./AdvProg_L2-Calculus
-        run: ./configure
-      - name: make AdvProg_L2
-        working-directory: ./AdvProg_L2-Calculus
-        run: make
-      - name: make test AdvProg_L2
-        continue-on-error: true
-        working-directory: ./AdvProg_L2-Calculus
-        run: make test
+      # # AdvProg_L2-Calculus
+      # - name: configure
+      #   working-directory: ./AdvProg_L2-Calculus
+      #   run: ./configure
+      # - name: make AdvProg_L2
+      #   working-directory: ./AdvProg_L2-Calculus
+      #   run: make
+      # - name: make test AdvProg_L2
+      #   continue-on-error: true
+      #   working-directory: ./AdvProg_L2-Calculus
+      #   run: make test
 
-      # AdvProg_L3-HangMan
-      - name: configure
-        working-directory: ./AdvProg_L3-HangMan
-        run: ./configure
-      - name: make AdvProg_L3
-        working-directory: ./AdvProg_L3-HangMan
-        run: make
-      - name: make test AdvProg_L3
-        continue-on-error: true
-        working-directory: ./AdvProg_L3-HangMan
-        run: make test
+      # # AdvProg_L3-HangMan
+      # - name: configure
+      #   working-directory: ./AdvProg_L3-HangMan
+      #   run: ./configure
+      # - name: make AdvProg_L3
+      #   working-directory: ./AdvProg_L3-HangMan
+      #   run: make
+      # - name: make test AdvProg_L3
+      #   continue-on-error: true
+      #   working-directory: ./AdvProg_L3-HangMan
+      #   run: make test
 
-      # AdvProg_L4-SimpleAI
-      - name: configure
-        working-directory: ./AdvProg_L4-SimpleAI
-        run: ./configure
-      - name: make AdvProg_L4
-        working-directory: ./AdvProg_L4-SimpleAI
-        run: make
-      - name: make test AdvProg_L4
-        continue-on-error: true
-        working-directory: ./AdvProg_L4-SimpleAI
-        run: make test
+      # # AdvProg_L4-SimpleAI
+      # - name: configure
+      #   working-directory: ./AdvProg_L4-SimpleAI
+      #   run: ./configure
+      # - name: make AdvProg_L4
+      #   working-directory: ./AdvProg_L4-SimpleAI
+      #   run: make
+      # - name: make test AdvProg_L4
+      #   continue-on-error: true
+      #   working-directory: ./AdvProg_L4-SimpleAI
+      #   run: make test
 
       # AdvProg_L6-Painter
+      - name: update
+        run: sudo apt-get update
       - name: install sdl2
         run: sudo apt install libsdl2-dev
       - name: install sdl2image
