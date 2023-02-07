@@ -8,19 +8,50 @@ on:
       - '**/mainTest.cpp'
       
 jobs:
-  changedfiles:
+  get_changed_files:
     runs-on: ubuntu-latest
-    # Map a step output to a job output
-    name: test_get_files
+    name: get_changed_files
     steps:
     - name: Changed Files
+      id: thuytt_files
       uses: Ana06/get-changed-files@v2.2.0
     - name: Printing
       run: |
         echo "Modified:"
-        echo "${{ steps.abc.outputs.modified }}"
+        echo "${{ steps.thuytt_files.outputs.modified }}"
+    outputs: 
+      abc: ${{ steps.thuytt_files.outputs.modified }}
+  
+  check_in_folder:
+    needs: get_changed_files
+    runs-on: ubuntu-latest
+    name: Check pattern
+    steps:
+    - name: Check pattern
+#       if: contains(get_changed_files.steps.thuytt_files.outputs.modified, 'AdvProg_L0-Hello')
+      run: |
+        echo "bingo contain ${{needs.get_changed_files.outputs.abc}}"
 
-
+  check_AdvProg_L0:
+    runs-on: ubuntu-latest
+    name: Check AdvProg_L0_Hello
+    if: contains(${needs.get_changed_files.outputs.abc}, 'AdvProg_L0-Hello')
+    steps:
+      - uses: actions/checkout@v2
+      - name: update
+        run: sudo apt-get update
+      - name: install cppunit
+        run: sudo apt install -y libcppunit-dev
+      
+      - name: configure
+        working-directory: ./AdvProg_L0-Hello
+        run: ./configure
+      - name: make AdvProg_L0
+        working-directory: ./AdvProg_L0-Hello
+        run: make
+      - name: make test AdvProg_L0
+        working-directory: ./AdvProg_L0-Hello
+        run: make test
 #   run_7_jobs:
 #     runs-on: ubuntu-latest
 #     name: Run 7 jobs
