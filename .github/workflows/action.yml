@@ -12,16 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     name: test_get_files
     steps:
-      - uses: actions/checkout@v2
-      - uses: jitterbit/get-changed-files@v1
-        id: abc
-        with:
-          format: space-delimited
-          token: ${{ secrets.CSUET_KEY }}
-      - name: Printing
-        run: |
-          echo "Modified:"
-          echo "${{ steps.abc.outputs.modified }}"
+    - id: files
+      uses: jitterbit/get-changed-files@v1
+    - run: |
+        for changed_file in ${{ steps.files.outputs.all }}; do
+          echo "Do something with this ${changed_file}."
+        done
+      
 
 
   run_7_jobs:
