@@ -35,7 +35,7 @@ jobs:
   check_AdvProg_L0:
     runs-on: ubuntu-latest
     name: Check AdvProg_L0_Hello
-    if: contains(${needs.get_changed_files.outputs.abc}, 'AdvProg_L0-Hello')
+    if: contains(${{needs.get_changed_files.outputs.abc}}, 'AdvProg_L0-Hello')
     steps:
       - uses: actions/checkout@v2
       - name: update
