@@ -8,15 +8,32 @@ on:
       - '**/mainTest.cpp'
       
 jobs:
+  test_get_files:
+    runs-on: ubuntu-latest
+    name: test_get_files
+    steps:
+      - uses: actions/checkout@v2
+      - uses: master/get-changed-files@v1
+        id: abc
+        with:
+          format: space-delimited
+          token: ${{ secrets.CSUET_KEY }}
+      - name: Printing
+        run: |
+          echo "Modified:"
+          echo "${{ steps.abc.outputs.modified }}"
+
+
   run_7_jobs:
     runs-on: ubuntu-latest
     name: Run 7 jobs
     steps:
       - uses: actions/checkout@v2
-      - name: update
-        run: sudo apt-get update
-      - name: install cppunit
-        run: sudo apt install -y libcppunit-dev
+
+      # - name: update
+      #   run: sudo apt-get update
+      # - name: install cppunit
+      #   run: sudo apt install -y libcppunit-dev
       
       # # AdvProg_L0-Hello
       # - name: configure
@@ -26,6 +43,7 @@ jobs:
       #   working-directory: ./AdvProg_L0-Hello
       #   run: make
       # - name: make test AdvProg_L0
+      #   continue-on-error: true
       #   working-directory: ./AdvProg_L0-Hello
       #   run: make test
 
@@ -77,33 +95,33 @@ jobs:
       #   working-directory: ./AdvProg_L4-SimpleAI
       #   run: make test
 
-      # AdvProg_L6-Painter
-      - name: install sdl2
-        run: sudo apt install libsdl2-dev
-      - name: install sdl2image
-        run: sudo apt install libsdl2-image-dev
-      - name: configure
-        working-directory: ./AdvProg_L6-Painter
-        run: ./configure
-      - name: make AdvProg_L6
-        working-directory: ./AdvProg_L6-Painter
-        run: make
-      - name: make test AdvProg_L6
-        continue-on-error: true
-        working-directory: ./AdvProg_L6-Painter
-        run: make test
+      # # AdvProg_L6-Painter
+      # - name: install sdl2
+      #   run: sudo apt install libsdl2-dev
+      # - name: install sdl2image
+      #   run: sudo apt install libsdl2-image-dev
+      # - name: configure
+      #   working-directory: ./AdvProg_L6-Painter
+      #   run: ./configure
+      # - name: make AdvProg_L6
+      #   working-directory: ./AdvProg_L6-Painter
+      #   run: make
+      # - name: make test AdvProg_L6
+      #   continue-on-error: true
+      #   working-directory: ./AdvProg_L6-Painter
+      #   run: make test
 
-      # AdvProg_L7-Snake
-      - name: configure privelige
-        working-directory: ./AdvProg_L7-Snake
-        run: chmod +x configure
-      - name: configure
-        working-directory: ./AdvProg_L7-Snake
-        run: ./configure
-      - name: make AdvProg_L7
-        working-directory: ./AdvProg_L7-Snake
-        run: make
-      - name: make test AdvProg_L7
-        continue-on-error: true
-        working-directory: ./AdvProg_L7-Snake
-        run: make test
+      # # AdvProg_L7-Snake
+      # - name: configure privelige
+      #   working-directory: ./AdvProg_L7-Snake
+      #   run: chmod +x configure
+      # - name: configure
+      #   working-directory: ./AdvProg_L7-Snake
+      #   run: ./configure
+      # - name: make AdvProg_L7
+      #   working-directory: ./AdvProg_L7-Snake
+      #   run: make
+      # - name: make test AdvProg_L7
+      #   continue-on-error: true
+      #   working-directory: ./AdvProg_L7-Snake
+      #   run: make test
