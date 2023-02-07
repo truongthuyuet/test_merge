@@ -19,15 +19,18 @@ jobs:
       run: |
         echo "Modified:"
         echo "${{ steps.thuytt_files.outputs.modified }}"
+    outputs: 
+      abc: ${{ steps.thuytt_files.outputs.modified }}
   
   check_in_folder:
+    needs: get_changed_files
     runs-on: ubuntu-latest
     name: Check pattern
     steps:
     - name: Check pattern
-      if: contains(get_changed_files.steps.thuytt_files.outputs.modified, 'AdvProg_L0-Hello')
+#       if: contains(get_changed_files.steps.thuytt_files.outputs.modified, 'AdvProg_L0-Hello')
       run: |
-        echo "bingo contain"
+        echo "bingo contain ${needs.get_changed_files.outputs.abc}"
 
 #   run_7_jobs:
 #     runs-on: ubuntu-latest
