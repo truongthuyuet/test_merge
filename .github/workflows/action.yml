@@ -13,30 +13,19 @@ jobs:
     # Map a step output to a job output
     name: test_get_files
     steps:
-        # Make sure we have some code to diff.
-      - name: Get changed file
-        uses: Ana06/get-changed-files@v2.2.0
-  # test_get_files:
-  #   runs-on: ubuntu-latest
-  #   name: test_get_files
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: master/get-changed-files@v1
-  #       id: abc
-  #       with:
-  #         format: space-delimited
-  #         token: ${{ secrets.CSUET_KEY }}
-  #     - name: Printing
-  #       run: |
-  #         echo "Modified:"
-  #         echo "${{ steps.abc.outputs.modified }}"
+    - name: Changed Files
+      uses: Ana06/get-changed-files@v2.2.0
+    - name: Printing
+      run: |
+        echo "Modified:"
+        echo "${{ steps.abc.outputs.modified }}"
 
 
-  run_7_jobs:
-    runs-on: ubuntu-latest
-    name: Run 7 jobs
-    steps:
-      - uses: actions/checkout@v2
+#   run_7_jobs:
+#     runs-on: ubuntu-latest
+#     name: Run 7 jobs
+#     steps:
+#       - uses: actions/checkout@v2
 
       # - name: update
       #   run: sudo apt-get update
