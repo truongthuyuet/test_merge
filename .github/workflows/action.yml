@@ -8,9 +8,9 @@ on:
       - '**/mainTest.cpp'
       
 jobs:
-  hello_world_job:
+  run_7_jobs:
     runs-on: ubuntu-latest
-    name: Hello world job
+    name: Run 7 jobs
     steps:
       - uses: actions/checkout@v2
       - name: install cppunit
@@ -20,10 +20,10 @@ jobs:
       - name: configure
         working-directory: ./AdvProg_L0-Hello
         run: ./configure
-      - name: make
+      - name: make AdvProg_L0
         working-directory: ./AdvProg_L0-Hello
         run: make
-      - name: make test
+      - name: make test AdvProg_L0
         working-directory: ./AdvProg_L0-Hello
         run: make test
 
@@ -31,9 +31,64 @@ jobs:
       - name: configure
         working-directory: ./AdvProg_L1-GuessIt
         run: ./configure
-      - name: make
+      - name: make AdvProg_L1
         working-directory: ./AdvProg_L1-GuessIt
         run: make
-      - name: make test
+      - name: make test AdvProg_L1
         working-directory: ./AdvProg_L1-GuessIt
+        run: make test
+
+      # AdvProg_L2-Calculus
+      - name: configure
+        working-directory: ./AdvProg_L2-Calculus
+        run: ./configure
+      - name: make AdvProg_L2
+        working-directory: ./AdvProg_L2-Calculus
+        run: make
+      - name: make test AdvProg_L2
+        working-directory: ./AdvProg_L2-Calculus
+        run: make test
+
+      # AdvProg_L3-HangMan
+      - name: configure
+        working-directory: ./AdvProg_L3-HangMan
+        run: ./configure
+      - name: make AdvProg_L3
+        working-directory: ./AdvProg_L3-HangMan
+        run: make
+      - name: make test AdvProg_L3
+        working-directory: ./AdvProg_L3-HangMan
+        run: make test
+
+      # AdvProg_L4-SimpleAI
+      - name: configure
+        working-directory: ./AdvProg_L4-SimpleAI
+        run: ./configure
+      - name: make AdvProg_L4
+        working-directory: ./AdvProg_L4-SimpleAI
+        run: make
+      - name: make test AdvProg_L4
+        working-directory: ./AdvProg_L4-SimpleAI
+        run: make test
+
+      # AdvProg_L6-Painter
+      - name: configure
+        working-directory: ./AdvProg_L6-Painter
+        run: ./configure
+      - name: make AdvProg_L6
+        working-directory: ./AdvProg_L6-Painter
+        run: make
+      - name: make test AdvProg_L6
+        working-directory: ./AdvProg_L6-Painter
+        run: make test
+
+      # AdvProg_L7-Snake
+      - name: configure
+        working-directory: ./AdvProg_L7-Snake
+        run: ./configure
+      - name: make AdvProg_L7
+        working-directory: ./AdvProg_L7-Snake
+        run: make
+      - name: make test AdvProg_L7
+        working-directory: ./AdvProg_L7-Snake
         run: make test
