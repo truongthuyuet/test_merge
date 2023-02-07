@@ -30,7 +30,7 @@ jobs:
     - name: Check pattern
 #       if: contains(get_changed_files.steps.thuytt_files.outputs.modified, 'AdvProg_L0-Hello')
       run: |
-        echo "bingo contain ${needs.get_changed_files.outputs.abc}"
+        echo "bingo contain ${{needs.get_changed_files.outputs.abc}}"
 
 #   run_7_jobs:
 #     runs-on: ubuntu-latest
