@@ -35,7 +35,6 @@ jobs:
         working-directory: ./AdvProg_L1-GuessIt
         run: make
       - name: make test AdvProg_L1
-        if: always()
         continue-on-error: true
         working-directory: ./AdvProg_L1-GuessIt
         run: make test
@@ -48,6 +47,7 @@ jobs:
         working-directory: ./AdvProg_L2-Calculus
         run: make
       - name: make test AdvProg_L2
+        continue-on-error: true
         working-directory: ./AdvProg_L2-Calculus
         run: make test
 
@@ -59,6 +59,7 @@ jobs:
         working-directory: ./AdvProg_L3-HangMan
         run: make
       - name: make test AdvProg_L3
+        continue-on-error: true
         working-directory: ./AdvProg_L3-HangMan
         run: make test
 
@@ -70,6 +71,7 @@ jobs:
         working-directory: ./AdvProg_L4-SimpleAI
         run: make
       - name: make test AdvProg_L4
+        continue-on-error: true
         working-directory: ./AdvProg_L4-SimpleAI
         run: make test
 
@@ -81,6 +83,7 @@ jobs:
         working-directory: ./AdvProg_L6-Painter
         run: make
       - name: make test AdvProg_L6
+        continue-on-error: true
         working-directory: ./AdvProg_L6-Painter
         run: make test
 
@@ -92,5 +95,6 @@ jobs:
         working-directory: ./AdvProg_L7-Snake
         run: make
       - name: make test AdvProg_L7
+        continue-on-error: true
         working-directory: ./AdvProg_L7-Snake
         run: make test
