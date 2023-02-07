@@ -128,7 +128,7 @@ void Game::nextStep()
 {
 	while (!inputQueue.empty()) {
 		// get the input direction from input queue
-        Direction next = // YOUR CODE HERE
+        Direction next ; // YOUR CODE HERE
 
 		// remove the front of input queue
         // YOUR CODE HERE
@@ -162,7 +162,7 @@ void Game::addCherry()
 		// init a random position inside the play screen (width, height)
 		// Suggestion: use rand() function
 
-        Position randomPos() // YOUR CODE HERE
+        Position randomPos; // YOUR CODE HERE
 		
 		// check if the randomPos is EMPTY 
         if (getCellType(randomPos) == CELL_EMPTY) {
