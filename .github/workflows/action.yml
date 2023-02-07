@@ -54,7 +54,7 @@ jobs:
         run: make test
   
   # AdvProg_L1-GuessIt
-  check_AdvProg_L0:
+  check_AdvProg_L1:
     runs-on: ubuntu-latest
     name: Check AdvProg_L1_GuessIt
     if: contains(${{needs.get_changed_files.outputs.abc}}, 'AdvProg_L1-GuessIt')
