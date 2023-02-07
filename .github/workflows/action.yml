@@ -8,20 +8,28 @@ on:
       - '**/mainTest.cpp'
       
 jobs:
-  test_get_files:
+  changedfiles:
     runs-on: ubuntu-latest
+    # Map a step output to a job output
     name: test_get_files
     steps:
-      - uses: actions/checkout@v2
-      - uses: master/get-changed-files@v1
-        id: abc
-        with:
-          format: space-delimited
-          token: ${{ secrets.CSUET_KEY }}
-      - name: Printing
-        run: |
-          echo "Modified:"
-          echo "${{ steps.abc.outputs.modified }}"
+        # Make sure we have some code to diff.
+      - name: Get changed file
+        uses: Ana06/get-changed-files@v2.2.0
+  # test_get_files:
+  #   runs-on: ubuntu-latest
+  #   name: test_get_files
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: master/get-changed-files@v1
+  #       id: abc
+  #       with:
+  #         format: space-delimited
+  #         token: ${{ secrets.CSUET_KEY }}
+  #     - name: Printing
+  #       run: |
+  #         echo "Modified:"
+  #         echo "${{ steps.abc.outputs.modified }}"
 
 
   run_7_jobs:
