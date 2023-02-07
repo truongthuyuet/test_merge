@@ -14,7 +14,10 @@ jobs:
     steps:
     - name: Changed Files
       uses: Ana06/get-changed-files@v2.2.0
-
+    - name: Printing
+      run: |
+        echo "Modified:"
+        echo "${{ steps.abc.outputs.modified }}"
 
 
 #   run_7_jobs:
