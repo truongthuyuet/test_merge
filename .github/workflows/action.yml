@@ -20,7 +20,7 @@ jobs:
         echo "Modified:"
         echo "${{ steps.thuytt_files.outputs.modified }}"
     - name: Check pattern
-      if: ${contains(steps.thuytt_files.outputs.modified, 'AdvProg_L0-Hello')}
+      if: contains(steps.thuytt_files.outputs.modified, 'AdvProg_L0-Hello')
       run: |
         echo "bingo contain"
 
